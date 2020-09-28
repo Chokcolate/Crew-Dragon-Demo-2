@@ -1,25 +1,6 @@
-# Smart-Bin
-<li>This is a Project for computer programming 06016315</li>
-<li>โปรเจคนี้ เป็นส่วนหนึ่งของรายวิชา คอมพิวเตอร์โปรแกรมมิ่ง 06016315</li>
-<li>link Video - <a href="https://www.youtube.com/watch?v=7IxkijIoHPM">https://www.youtube.com/watch?v=7IxkijIoHPM</a><br><br></li>
+# Crew-Dragon-Demo-2
+<li>06016341 MULTIMEDIA PROGRAMMING </li>
 
-## Abstract
-&emsp;ปัจจุบันผู้คนส่วนใหญ่ต้องการความสะดวกสบายในการใช้ชีวิตกันเป็นอย่างมาก  โครงงานนี้จึงถูกพัฒนาขึ้นเพื่ออำนวยความสะดวกให้กับผู้ใช้งาน มีระบบเซ็นเซอร์ตรวจวัดระยะเมื่อยื่นขยะออกไปเพื่อจะทิ้ง หากอยู่ในระยะที่ระบบตรวจจับได้ฝาของถังขยะจะเปิดขึ้นอัตโนมัติ  ทำให้ถังขยะธรรมดาๆเปลี่ยนเป็นถังอัจฉริยะที่สามารถ 
-เปิด-ปิดได้ด้วยตัวของมันเอง ทำให้ผู้ใช้งานหมดปัญหาที่จะก้มไปเปิดฝาถังขยะ อีกทั้งถังขยะใบนี้ยังมีระบบแจ้งเตือนผ่านแอพพลิเคชันไลน์เมื่อจำนวนขยะในถังมีมากพอที่จะต้องนำไปทิ้ง
-## Required Components
-<table>
-<thead>
-<tr>
-<th align="center">Servo Motor Arduino SG90 motor Servo ขนาดเล็ก</th>
-<th align="center">Arduino Uno R3+USB Arduino Uno</th>
-<th align="center">Ultrasonic SR04 เซนเซอร์ UltrasonicModule HC-SR04 Distance Measuring Transducer Sensor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a align="center"><img src="img/Components_1.jpg" width="200px" style="max-width:100%;"></a></td>
-<td align="center"><a align="center"><img src="img/Components_2.jpg" width="200px" style="max-width:100%;"></a></td>
-<td align="center"><a align="center"><img src="img/components_3.jpg" width="200px" style="max-width:100%;"></a></td>
-</tr>
-</tbody>
-</table>
+
+## Introduction
+&emsp;ภารกิจ Crew-Dragon-Demo-2 คือ ภารกิจปล่อยยาน Dragon 2 แบบมีมนุษย์ควบคุมในภารกิจที่ชื่อว่า Crew Dragon Demo-2 สู่ International Space Station ซึ่งถือเป็นการปล่อยยาน Dragon 2 แบบ Crewed Flight ครั้งแรกของ SpaceX เป็นครั้งแรกของสหรัฐอเมริกาและ NASA ที่มีการส่งนักบินอวกาศด้วยยานสัญชาติอเมริกาจากแผ่นดินอเมริกาในรอบ 9 ปีหลังจากการปลดกระจำการของโครงการกระสวยอวกาศในปี 2011 ซึ่งเป็นการปิดฉาก Human Spaceflight System ของ NASA ณ เวลานั้นเพราะ NASA ไม่มียานเป็นของตัวเองอีกแล้วแต่ต้องพึ่งยาน Soyuz ของรัสเซียในการส่งนักบินอวกาศไป ISS จึงทำให้การปล่อยยาน Dragon 2 ในภารกิจ DM-2 นี้เป็นครั้งหนึ่งในประวัติศาสตร์ของ NASA นั้นเอง
