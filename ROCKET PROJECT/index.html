@@ -11,13 +11,14 @@
 </head>
 
 <body>
+
+    <img src="IMG/element/bg.jpg" id="bg" alt="" width="100%">
     <div class="logo">
         <img class="logo" src="./IMG/element/logo_spacex.png" alt="" width="200px"><br>
     </div>
     <div class="layer_0">
-        <div class="bg">sdfsdfsdf</div>
+        <div class="bg"></div>
     </div>
-    <img id="dragon" src="./IMG/rocket/crewdragondemo2.png">
 
     <div class="content_1 container">
         <!--First page-->
@@ -27,9 +28,26 @@
                 <!--<img src="./IMG/element/logo_crewdragondemo2.png" alt="" width="200px">-->
             </div>
         </div>
-        <button onclick="start()">
+        <button type="button" class="start btn btn-primary" style="opacity: 0; padding: 10px 50px 10px 50px;"
+            onclick="start()">
             START
         </button>
+    </div>
+
+    <div class="launch">
+        <img id="dragon" src="./IMG/rocket/crewdragondemo2.png">
+        <img class="launch_pad" src="./IMG/element/launch.png" alt="">
+        <div class="crew_access_arm">.</div>
+    </div>
+
+    <div class="broadcast">
+        <div id="tl1_bc" style="color: #222;">
+            <h6 class="tx1"></h6>
+            <h6 class="tx2"></h6>
+            <h6 class="tx3"></h6>
+        </div>
+        <button type="button" id="next" class="btn btn-primary"
+            style="opacity: 0;padding: 10px 50px 10px 50px;">จุดเครื่องยนต์</button>
     </div>
 
     <div class="status">

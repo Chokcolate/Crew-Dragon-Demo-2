@@ -3,18 +3,36 @@
   src: url(sansation_light.woff);
 }
 html {
-  background-color: #c1c6cf;
+  background-color: #000;
 }
 .layer_0 {
   position: fixed;
   z-index: -9999;
   width: 100%;
 }
+.bg_first_page {
+  background: url("https://wallpaperaccess.com/full/19606.jpg") no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
 .bg {
   position: fixed;
   width: 100%;
   height: 500%;
   top: -400%;
+  z-index: -9999;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     180deg,
@@ -22,20 +40,15 @@ html {
     rgba(8, 7, 106, 1) 18%,
     rgba(8, 7, 106, 1) 29%,
     rgba(9, 9, 121, 1) 35%,
-    rgb(194, 239, 255) 86%,
-    rgba(233, 250, 255, 1) 100%
+    rgb(159, 176, 226) 50%,
+    rgb(255, 255, 255) 100%
   );
+  opacity: 0;
 }
 .logo {
   position: fixed;
   top: 25px;
   left: 35px;
-}
-#dragon {
-  height: 5000px;
-  position: fixed;
-  top: 80px;
-  left: 10%;
 }
 .status {
   position: fixed;
@@ -43,7 +56,35 @@ html {
   height: 2000px;
   top: 90%;
   opacity: 0.5;
+  display: none;
 }
+.launch {
+  position: fixed;
+  width: max-content;
+}
+
+#dragon {
+  position: fixed;
+  height: 5000px;
+  left: 10%;
+  top: 10%;
+}
+
+.launch_pad {
+  width: 900px;
+  position: fixed;
+  left: 330px;
+  top: 120px;
+  opacity: 0;
+}
+
+.broadcast {
+  position: fixed;
+  width: 800px;
+  height: max-content;
+  color: #fff;
+}
+
 .circle_1 {
   display: inline-block;
   width: 1500px;
@@ -53,6 +94,7 @@ html {
   left: 50%;
 }
 .content_1 {
+  z-index: 1;
   height: 5000px;
   position: fixed;
   top: 100px;
