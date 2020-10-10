@@ -1,5 +1,7 @@
 var tl = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
+
 tl.to(".display-1", {
   duration: 2,
   text: "CREW DRAGON <br> DEMO-2",
@@ -8,7 +10,53 @@ tl.to(".display-1", {
   opacity: 1,
   duration: 1,
 });
+
+function intro() {
+  document.getElementById("gui").style.zIndex = "1";
+  gsap.to(".dp1", { xPercent: 500, opacity: 0, duration: 1 });
+  gsap.to(".start", { yPercent: 1000, opacity: 0, duration: 0.5 });
+  gsap.to("#dragon", {
+    duration: 0.5,
+  });
+
+  gsap.to(".trigger_01", {
+    scrollTrigger: { trigger: ".trigger_01", start: "top 50%" },
+    opacity: 1,
+    duration: 1,
+  });
+
+  gsap.to(".trigger_02", {
+    scrollTrigger: { trigger: ".trigger_02", start: "top 50%" },
+    opacity: 1,
+    duration: 1,
+  });
+
+  gsap.to(".trigger_03", {
+    scrollTrigger: { trigger: ".trigger_03", start: "top 50%" },
+    opacity: 1,
+    duration: 1,
+  });
+
+  gsap.to(".trigger_04", {
+    scrollTrigger: { trigger: ".trigger_04", start: "top 50%" },
+    opacity: 1,
+    duration: 1,
+  });
+  gsap.to(".trigger_05", {
+    scrollTrigger: { trigger: ".trigger_05", start: "top 50%" },
+    opacity: 1,
+    duration: 1,
+  });
+  gsap.to(".trigger_06", {
+    scrollTrigger: { trigger: ".trigger_06", start: "top 50%" },
+    opacity: 1,
+    duration: 1,
+  });
+}
+
 function start() {
+  document.getElementById("dragon").style.position = "fixed";
+  gsap.to(".gui", { opacity: 0 });
   gsap.to("#bg", { yPercent: 100, duration: 3 });
   tl.to("#dragon", {
     left: "770px",

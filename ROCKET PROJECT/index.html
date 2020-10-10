@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -10,7 +11,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body id=>
 
     <img src="IMG/element/bg.jpg" id="bg" alt="" width="100%">
     <div class="logo">
@@ -23,22 +24,224 @@
     <div class="content_1 container">
         <!--First page-->
         <div class="row">
-            <h1 class="display-1" style="font-weight: bold; color: #576a94;"></h1>
+            <h1 class="dp1 display-1" style="font-weight: bold; color: #576a94;"></h1>
             <div class="col-3">
                 <!--<img src="./IMG/element/logo_crewdragondemo2.png" alt="" width="200px">-->
             </div>
         </div>
         <button type="button" class="start btn btn-primary" style="opacity: 0; padding: 10px 50px 10px 50px;"
-            onclick="start()">
-            START
-        </button>
+            onclick="intro()">START</button>
     </div>
 
+
+
     <div class="launch">
+
+
+
+        <div id="gui" class="gui trigger_01">
+            <div style="width: 500px;">
+                <svg height="500" width="500">
+                    <line x1="150" y1="200" x2="510" y2="60" />
+                </svg>
+            </div>
+            <div style="width: fit-content; position: relative;left: 400px;">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">FALCON 9 rocket</h5>
+                        <p class="card-text">
+                            HEIGHT: 215 feet/65.5 meters (Inducing Crew Dragon)<br>
+                            DIAMETER: 12ft/3.7m<br>
+                            MASS: 1,207,920 pounds/549,054 kilograms<br>
+                            PAYLOAD TO LOW EARTH ORBIT:
+                            50,2651b/22, 800kg
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space_line" style="height: 80px;"></div>
+
+        <div id="gui" class="gui trigger_02">
+            <div style="width: 300px;">
+                <svg height="500" width="500">
+                    <line x1="150" y1="50" x2="510" y2="60" />
+                </svg>
+            </div>
+            <div style="width: 800px; position: relative;left: 450px;">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">CREW DRAGON capsule (Endeavour)</h5>
+                        <p class="card-text">
+                            HEIGHT: 26.7ft/8.1m (with Trunk) DIAMETER: 13ft/4m<br>
+                            DRY MASS: 14,100 lb/6,400kg PAYLOAD TO ISS: 7,3001b/3,310kg<br>
+                            PROPULSION: Four pairs of Super Draco engines are arranged around the
+                            Crew Dragon capsule and can be used in an emergency abort to eject from the
+                            rocket. The capsule uses 16 maneuvering thrusters.
+                            CREW: Two astronauts for this mission, Robert Behnken and Douglas Hurley.
+                            The capsule has the capacity to carry up to seven crew members.
+                            Astronauts Behnken and Hurley name the Crew Dragon spacecraft, Endeavour.
+                            It is the third US spacecraft to use that name after 1971's Apollo 15 Command
+                            and Service Module and 1992's Space Shuttle orbiter. Both astronauts' first
+                            space flights were on board the Space Shuttle, Endeavour.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="space_line" style="height: 80px;"></div>
+
+
+        <div id="gui" class="gui trigger_03">
+            <div style="width: 500px;">
+                <svg height="500" width="500">
+                    <line x1="150" y1="50" x2="510" y2="35" />
+                </svg>
+            </div>
+            <div style="width: fit-content; position: relative;left: 500px;">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Trunk: an unpressurized
+                            cargo/service module
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space_line" style="height: 300px;"></div>
+
+        <div id="gui" class="gui trigger_04">
+            <div style="width: 500px;">
+                <svg height="500" width="500">
+                    <line x1="150" y1="50" x2="510" y2="60" />
+                </svg>
+            </div>
+            <div style="width: 800px; position: relative;left: 400px;">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">FIRST STAGE</h5>
+                        <p class="card-text">
+                            A reusable stage of the
+                            Falcon 9 rocket, landing legs are extended to
+                            enable a soft landing onto an autonomous
+                            drone ship. The nine Merlin 1D gas generator
+                            engines use RP-1 and LOx as propellants.
+                            ("272,491 lb/123,600 kg of RP-1,
+                            space-grade kerosene) and
+                            Liquid Oxygen ( "633,8291b/
+                            287, 500kg of LOx)
+                            "Tank capacity
+                            Each engine weighs about 1,030 lb/467kg
+                            and produces 192,000 pounds force (Ibf)
+                            87,090 kilograms-force (kgf) of
+                            thrust and 282 seconds of specific
+                            impulse (Isp) at launch, powering
+                            the stage with nearly
+                            1.8 million pounds
+                            816,466 kilograms of force.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="space_line" style="height: 350px;"></div>
+
+
+        <div id="gui" class="gui trigger_05">
+            <div style="width: 500px;">
+                <svg height="500" width="500">
+                    <line x1="150" y1="50" x2="510" y2="35" />
+                </svg>
+            </div>
+            <div style="width: fit-content; position: relative;left: 400px;">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Interstage
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div style="height: 750px;"></div>
+
+
+
+        <div id="gui" class="gui trigger_05">
+            <div style="width: 500px;">
+                <svg height="500" width="500">
+                    <line x1="150" y1="50" x2="510" y2="35" />
+                </svg>
+            </div>
+            <div style="width: 800px; position: relative;left: 400px;">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SECOND STAGE</h5>
+                        <p class="card-text">
+                            One Merlin 1D vacuum engine
+                            uses RP-1 and LOx.
+                            The M-1 DVac engine is a modified
+                            M-1D engine with a larger nozzle.
+                            It has a vacuum thrust of
+                            210,000 Ibf/95,254 kgf and an Isp
+                            of 348 seconds by using a 165:1
+                            area ratio nozzle extension and
+                            can throttle down to 39% with its
+                            pintle injector chamber design.
+                            The pintle was first used in the
+                            Apollo Lunar Module Descent
+                            Engine (LMDE) for deep
+                            throttling and landing on
+                            the lunar surface.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 2200px;"></div>
+
+
+
+        <div id="gui" class="gui trigger_06">
+            <div style="width: 500px;">
+                <svg height="1000" width="1000">
+                    <line x1="150" y1="250" x2="500" y2="35" />
+                </svg>
+            </div>
+            <div style="width: fit-content; position: relative;left: 400px;">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nine Merlin 1D engine</h5>
+                        <button type="button" class="btn btn-primary" style="padding: 10px 50px 10px 50px;"
+                            onclick="start()">จุดเครื่องยนต์</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+        </div>
+
+
+
         <img id="dragon" src="./IMG/rocket/crewdragondemo2.png">
         <img class="launch_pad" src="./IMG/element/launch.png" alt="">
         <div class="crew_access_arm">.</div>
     </div>
+
 
     <div class="broadcast">
         <div id="tl1_bc" style="color: #222;">
@@ -47,7 +250,7 @@
             <h6 class="tx3"></h6>
         </div>
         <button type="button" id="next" class="btn btn-primary"
-            style="opacity: 0;padding: 10px 50px 10px 50px;">จุดเครื่องยนต์</button>
+            style="opacity: 0;padding: 10px 50px 10px 50px; z-index: 999;" onclick="start()">จุดเครื่องยนต์</button>
     </div>
 
     <div class="status">
@@ -58,6 +261,7 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/TextPlugin.min.js"></script>
 <script src="./javascripts/main.js"></script>
 
