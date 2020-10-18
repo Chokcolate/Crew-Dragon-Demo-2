@@ -1,38 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h2 class="title">gsap.to() Basic Usage</h2>
-    <button onclick="myFunction()">Click me</button>
-    <div class="box orange"></div>
-    <div class="box grey"></div>
-    <div class="box green"></div>
-<style>
-    .box{
-        width: 50px;
-        height: 50px;
-    }
-    .orange{
-        background-color: orange;
-    }
-    .grey{
-        background-color: grey;
-    }
-    .green{
-        background-color: green;
-    }
-</style>
+
+
+
+
+
+    <!---             timeline             --->
+    <!---             timeline             --->
+    <div class="timeline_box">
+        <h6 class="tl_1"></h6>
+        <h6 class="tl_2"></h6>
+        <h6 class="tl_3"></h6>
+        <h6 class="tl_4"></h6>
+        <h6 class="tl_5"></h6>
+        <h6 class="tl_6"></h6>
+        <h6 class="tl_7"></h6>
+        <h6 class="tl_8"></h6>
+        <h6 class="tl_9"></h6>
+    </div>
+    <!---             timeline             --->
+
+
+    <!---             Interact             --->
+    <div class="interactive">
+        <div class="go_nongo">
+
+        </div>
+
+    </div>
+    <!---             Interact             --->
+
+
+
+    <!--- CREW DRAGON DEMO2 AND 39A COMPLEX--->
+    <div class="parallax d-flex justify-content-center align-items-end">
+        <div class="dragon">
+            <img class="demo-2" src="IMG/rocket/demo-2.png" alt="">
+            <img class="_2nd" src="IMG/rocket/2nd.png" alt="">
+            <img class="_1st" src="IMG/rocket/1st.png" alt="">
+            <div class="effect">
+
+            </div>
+        </div>
+        <img class="pad" src="IMG/element/launch.png" alt="">
+    </div>
+    <!--- CREW DRAGON DEMO2 AND 39A COMPLEX--->
+
+
+    <!---             Landing              --->
+    <div class="landing_box d-flex align-items-start flex-column bd-highlight mb-3">
+        <class class="mb-auto p-2 bd-highlight"></class>
+        <div class="box p-2 bd-highlight">
+            <img class="landing_1" src="/IMG/element/landing.gif" alt="">
+            <img class="landing_2" src="/IMG/element/landing_1.gif" alt="">
+        </div>
+    </div>
+    <!---             Landing              --->
+
+
+
+
+    <!---           status right           --->
+    <div class="status_right">
+        <h3 style="color: #fff;"><b id="speed"></b></h3>
+    </div>
+    <!---           status right           --->
+
+
+    <!---          status footer           --->
+    <div class="status_footer d-flex justify-content-center align-items-end">
+        <div style="    position: fixed;
+    bottom: 4%;
+    left: 50.6%;
+    z-index: 1;">
+            <h3 style="color: #fff;"><b id="min"></b> : <b id="sec"></b> </h3>
+            <br>
+            <button style="position:fixed;" type="button" class="btn btn-primary" onclick="start();">START</button>
+        </div>
+        <div class="left"><img class="circle" src="/IMG/element/LEFT.png" alt=""></div>
+        <div class="right"><img class="circle" src="/IMG/element/RIGHT.png" alt=""></div>
+    </div>
+    <!---          status footer          --->
+
+
+
+
+
+
+    <!---              cloud               --->
+    <div class="effect">
+        <img class="cloud c1" src="/IMG/element/c1.png" alt="" style="width: 100%;height: auto;">
+        <img class="cloud c2" src="/IMG/element/c2.png" alt="" style="width: 150%;height: auto;left: 40%;">
+        <img class="cloud c3" src="/IMG/element/c3.png" alt="" style="width: 100%;height: auto;left: 40%;">
+    </div>
+    <!---              cloud               --->
+
+
+
+
+    <!---           EART AND ISS           --->
+    <div class="eart_iss d-flex justify-content-center align-items-end">
+        <img class="eart" src="IMG/element/earth4.png" alt="">
+    </div>
+    <!---           EART AND ISS           --->
+
+
+
+
 </body>
-<script>
-    function myFunction() {
-        gsap.to("h2.title", {duration: 1, opacity: 0.3});
-        gsap.to(".box", {duration: 2, x: 300});
-        gsap.to(".green", {duration: 3, rotation: 360, scale: 0.5});
-}
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/TextPlugin.min.js"></script>
+<script src="/javascripts/CustomEase.min.js"></script>
+<script src="./javascripts/main.js"></script>
+
 </html>
