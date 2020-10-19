@@ -70,14 +70,14 @@
 
 
 
-        <div class="separation" style="top: 20%;">
+        <div class="separation_1st" style="top: 20%;">
             <div class="row">
                 <div class="col">
                     <button type="button" onclick="return_separation_1st()"
                         class="btn btn-success btn-lg btn-block active">
                         <p></p>
                         <p></p>
-                        แยกตัว
+                        แยกตัว 1st falcon 9
                         <p></p>
                         <p></p>
                     </button>
@@ -86,6 +86,32 @@
             <p></p>
             <div class="row" style="padding: 0px 15px 0px 15px;">
                 <div class="progress timeout_2">
+                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                        style="width: 100%;text-align: left;" aria-valuenow="100" aria-valuemin="" aria-valuemax="100">
+                        หมดเวลา
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="separation_2nd" style="top: 20%;">
+            <div class="row">
+                <div class="col">
+                    <button type="button" onclick="return_separation_2nd()"
+                        class="btn btn-success btn-lg btn-block active">
+                        <p></p>
+                        <p></p>
+                        แยกตัว 2nd
+                        <p></p>
+                        <p></p>
+                    </button>
+                </div>
+            </div>
+            <p></p>
+            <div class="row" style="padding: 0px 15px 0px 15px;">
+                <div class="progress timeout_3">
                     <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
                         style="width: 100%;text-align: left;" aria-valuenow="100" aria-valuemin="" aria-valuemax="100">
                         หมดเวลา
@@ -108,9 +134,9 @@
             <img class="demo-2" src="IMG/rocket/demo-2.png" alt="">
             <img class="_2nd" src="IMG/rocket/2nd.png" alt="">
             <img class="_1st" src="IMG/rocket/1st.png" alt="">
-            <div class="effect">
+            <img class="trail_1st" src="/IMG/element/trail.png" alt="">
+            <img class="trail_2nd" src="/IMG/element/trail.png" alt="">
 
-            </div>
         </div>
         <img class="pad" src="IMG/element/launch.png" alt="">
     </div>
@@ -122,6 +148,7 @@
         <class class="mb-auto p-2 bd-highlight"></class>
         <div class="box p-2 bd-highlight">
             <img class="landing_1" src="/IMG/element/landing.gif" alt="">
+            <img class="landing_3" src="/IMG/element/landing_3.gif" alt="">
             <img class="landing_2" src="/IMG/element/landing_1.gif" alt="">
         </div>
     </div>
@@ -136,14 +163,14 @@
         <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
             <h3 class="card-header">SPEED</h3>
             <div class="card-body">
-                <h5 class="card-title"><b id="speed"></b></h5>
+                <h5 class="card-title"><b id="speed"></b> km/h</h5>
             </div>
         </div>
 
         <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
             <h3 class="card-header">ALTITUDE</h3>
             <div class="card-body">
-                <h5 class="card-title"><b id="altitude"></b></h5>
+                <h5 class="card-title"><b id="altitude"></b> km</h5>
             </div>
         </div>
 

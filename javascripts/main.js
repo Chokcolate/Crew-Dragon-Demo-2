@@ -27,13 +27,13 @@ function start() {
 var i = setInterval(function interv() {
   if (time_speed != 0) {
     //       TIMER SPEED CONTROL      //
-    if (parseInt(secc) == 60) { secc = 0; minn += 1 }
-    else if ((minn == 0 && parseInt(secc) == 1)) { acceleration = 18 }
-    else if ((minn == 0 && parseInt(secc) == 58)) { time_speed = 1.2; acceleration = 74.184; altitude_speed = 1; }   //SPEED     
-    else if ((minn == 2 && parseInt(secc) == 29)) { time_speed = 0.2; acceleration = 0.5; altitude_speed = 3;} //SLOW
-    else if ((minn == 2 && parseInt(secc) == 50)) { time_speed = 2; acceleration = 80; altitude_speed = 4;}   //SPEED
-    else if ((minn == 8 && parseInt(secc) == 46)) { time_speed = 0.2; acceleration = 0.5; altitude_speed = 5;} //SLOW
-    else if ((minn == 9 && parseInt(secc) == 35)) { time_speed = 1.2; acceleration = 80; altitude_speed = 6;}   //SPEED
+    if (parseInt(secc) == 60 || parseInt(secc) >= 60) { secc = 0; minn += 1; }
+    else if ((minn == 0 && parseInt(secc) == 1)) { acceleration = 18;altitude_speed = 0.162;}
+    else if ((minn == 0 && parseInt(secc) == 58)) { time_speed = 1.2; acceleration = 74.184; altitude_speed = 0.85; }   //SPEED     
+    else if ((minn == 2 && parseInt(secc) == 29)) { time_speed = 0.2; acceleration = 0.5; altitude_speed = 0.05;} //SLOW
+    else if ((minn == 2 && parseInt(secc) == 50)) { time_speed = 2; acceleration = 80; altitude_speed = 1.2;}   //SPEED
+    else if ((minn == 8 && parseInt(secc) == 46)) { time_speed = 0.2; acceleration = 0.5; altitude_speed = 0.01;} //SLOW
+    else if ((minn == 9 && parseInt(secc) == 20)) { time_speed = 1.2; acceleration = 0.01;}   //SPEED
   
 
     //   CONTROL TWEEN AND TIMELINE    //
@@ -43,15 +43,17 @@ var i = setInterval(function interv() {
     else if ((minn == 2 && parseInt(secc) == 44)) { start_2nd(); }
     else if ((minn == 7 && parseInt(secc) == 10)) { entry_burn_1st(); }
     else if ((minn == 8 && parseInt(secc) == 47)) { seco_1(); }
-    else if ((minn == 9 && parseInt(secc) == 0)) { landing_1st(); }
-    else if ((minn == 12 && parseInt(secc) == 0)) { separation_2nd(); }
+    else if ((minn == 9 && parseInt(secc) == 3)) { landing_1st(); }
+    else if ((minn == 12 && parseInt(secc) == 1)) { separation_2nd(); }
+    else if ((minn == 13 && parseInt(secc) == 1)) { end(); }
   
   }
 
   secc += time_speed;
   cumulative_speed += acceleration;
-  speed.innerHTML = cumulative_speed;
-  altitude.innerHTML = altitude_cumulative;
+  altitude_cumulative += altitude_speed;
+  speed.innerHTML = parseInt(cumulative_speed);
+  altitude.innerHTML = altitude_cumulative.toFixed(1);
   min.innerHTML = minn;
   sec.innerHTML = parseInt(secc);
 }, 100);
@@ -60,6 +62,7 @@ var i = setInterval(function interv() {
 
 CustomEase.create("hop", "M0,0 C0.176,0.056 0.306,-0.028 0.616,0.244 0.661,0.283 0.798,0.468 1,0.568");
 TweenMax.to("body", {background:"linear-gradient(to right, #f00, #0f0, #00f, #600, #060)"});
+gsap.to(".eart", { rotation: -1000, duration: 250 });
 
 //       COUNT_DOWN
 function count_down() {
@@ -117,13 +120,9 @@ function liftoff() {
   time_speed = 1;
   gsap.to(".t_minus ", {top: '90%', left:'48%', color:'#fff'});
   gsap.to(".circle", { rotation: -29.5, duration: 7 });
-  setTimeout(function () {
-    gsap.to(".left", { opacity: 1, duration: 1 });
-    gsap.to(".right", { opacity: 1, duration: 1 });  }, 2000);
+  gsap.to(".left", { opacity: 1, duration: 1 });
+  gsap.to(".right", { opacity: 1, duration: 1 });
   setTimeout(function () { gsap.to(".dragon", { rotation: 85,  duration: 15 }); }, 7000);
-  setTimeout(function () { gsap.to(".eart", { top: '-250%', duration: 10 }); }, 10000);
-  setTimeout(function () { gsap.to(".eart", { rotation: -100, duration: 40 }); }, 11000);
-
   tl.to(".pad", { yPercent: 300, duration: 2.5, ease: "hop" })
     .to(".pad", { display:'none' })
     .to(".parallax", { scale: 0.7, y: -80, duration: 2.5 })
@@ -144,19 +143,21 @@ function max_q() {
 
 //       MECO
 function meco() {
+  gsap.to(".eart", { top: '-250%', duration: 10 });
   gsap.to(".tl_2", { display: 'block', duration: 0.5, text: "00:02:33 MECO" });
+  gsap.to(".trail_1st", { display: 'none', duration: 0.5});
 }
 
 //       1ST SEPARATION
 function return_separation_1st() {
   gsap.to(".dragon ._1st", { top: 10000, duration: 5, ease: "hop" })
-  gsap.to(".separation", { opacity: 0, display: 'none', duration: 1 });
+  gsap.to(".separation_1st", { opacity: 0, display: 'none', duration: 1 });
 }
 function separation_1st() {
   setTimeout(function () { return_separation_1st() }, 9000);
   gsap.to(".parallax", { scale: 1, xPercent: 0, duration: 3 });
   gsap.to(".eart_iss", { scale: 0.2, xPercent: 0, duration: 3 });
-  gsap.to(".separation", { opacity: 1, display: 'block', duration: 1 });
+  gsap.to(".separation_1st", { opacity: 1, display: 'block', duration: 1 });
   gsap.to(".timeout_2", { width: '100%', duration: 10 });
 }
 
@@ -164,26 +165,46 @@ function separation_1st() {
 function start_2nd() {
   gsap.to(".circle", { rotation: -97.18, duration: 20 });
     gsap.to(".parallax", { scale: 0.2, xPercent: 0, duration: 3 });
-    gsap.to(".eart_iss", { scale: 1, xPercent: 0, duration: 3 });
+  gsap.to(".eart_iss", { scale: 1, xPercent: 0, duration: 3 });
+  gsap.to(".trail_2nd", { display: 'block', duration: 0.5});
 }
 //       1ST ENTRY BURN
 function entry_burn_1st() {
   gsap.to(".circle", { rotation: -118.18,duration: 10});
   tl.to(".landing_1", { display:'block', duration: 5 })
+    .to(".landing_3", { display: 'block', duration: 2 })
     .to(".landing_2", { display:'block', duration: 2 });
 }
 
 //       SECO-1
 function seco_1() {
-  gsap.to(".circle", { rotation: -120.65, duration: 6});
+  gsap.to(".circle", { rotation: -120.65, duration: 6 });
+  gsap.to(".trail_2nd", { display: 'none', duration: 0.5});
  }
 
 //       1ST LANDING
 function landing_1st() { 
-  gsap.to(".circle", { rotation: -152.8, duration: 10.5});
+  gsap.to(".circle", { rotation: -152.8, duration: 22});
   gsap.to(".landing_1", { display:'none'})
-  gsap.to(".landing_2", { display:'none'});
+  gsap.to(".landing_2", { display: 'none' });
+  gsap.to(".landing_3", { display:'none'});
 }
 
 //       2ND SEPARATION
-function separation_2nd() {}
+function return_separation_2nd() { 
+  gsap.to(".dragon ._2nd", { top: 10000, duration: 5, ease: "hop" })
+  gsap.to(".separation_2nd", { opacity: 0, display: 'none', duration: 1 });
+}
+function separation_2nd() {
+  setTimeout(function () { return_separation_2nd() }, 9000);
+  gsap.to(".parallax", { scale: 1, xPercent: 0, duration: 3 });
+  gsap.to(".eart_iss", { scale: 0.2, xPercent: 0, duration: 3 });
+  gsap.to(".separation_2nd", { opacity: 1, display: 'block', duration: 1 });
+  gsap.to(".timeout_3", { width: '100%', duration: 10 });
+}
+
+
+function end() {
+   gsap.to(".parallax", { scale: 0.2, xPercent: 0, duration: 3 });
+  gsap.to(".eart_iss", { scale: 1, xPercent: 0, duration: 3 });
+}

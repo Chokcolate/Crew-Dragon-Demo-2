@@ -4,6 +4,7 @@ html {
   background: rgb(218, 218, 218);
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .logo {
   position: fixed;
@@ -21,7 +22,8 @@ html {
 }
 
 .go_nogo,
-.separation {
+.separation_1st,
+.separation_2nd {
   background-color: rgb(22, 22, 22);
   color: #fff;
   position: absolute;
@@ -103,9 +105,8 @@ html {
   display: none;
 }
 
-.parallax,
-.effect {
-  position: fixed;
+.parallax {
+  position: absolute;
   height: 100%;
   width: 100%;
 }
@@ -162,4 +163,35 @@ html {
   position: absolute;
   width: 130%;
   height: auto;
+}
+
+.trail_1st {
+  top: 99%;
+  left: 9px;
+  position: relative;
+  width: 12px;
+  height: 80%;
+  transform: translateZ(0);
+  animation: jet 0.02s ease alternate infinite;
+  transform-origin: top center;
+}
+.trail_2nd {
+  top: 34%;
+  left: 9px;
+  position: relative;
+  display: none;
+  width: 12px;
+  height: 50%;
+  transform: translateZ(0);
+  animation: jet 0.02s ease alternate infinite;
+  transform-origin: top center;
+}
+
+@keyframes jet {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.5);
+  }
 }
