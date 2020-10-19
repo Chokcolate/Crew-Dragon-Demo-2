@@ -35,9 +35,67 @@
 
     <!---             Interact             --->
     <div class="interactive">
-        <div class="go_nongo">
 
+        <div class="go_nogo" style="top: 40%;">
+            <div class="row">
+                <div class="col">
+                    <button type="button" onclick="return_go()" class="btn btn-success btn-lg btn-block active">
+                        <p></p>
+                        <p></p>
+                        ไป
+                        <p></p>
+                        <p></p>
+                    </button>
+                </div>
+                <div class="col">
+                    <button type="button" onclick="return_nogo()" class="btn btn-danger  btn-lg btn-block active">
+                        <p></p>
+                        <p></p>
+                        ไม่ไป
+                        <p></p>
+                        <p></p>
+                    </button>
+                </div>
+            </div>
+            <p></p>
+            <div class="row" style="padding: 0px 15px 0px 15px;">
+                <div class="progress timeout_1">
+                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                        style="width: 100%;text-align: left;" aria-valuenow="100" aria-valuemin="" aria-valuemax="100">
+                        หมดเวลา
+                    </div>
+                </div>
+            </div>
         </div>
+
+
+
+        <div class="separation" style="top: 20%;">
+            <div class="row">
+                <div class="col">
+                    <button type="button" onclick="return_separation_1st()"
+                        class="btn btn-success btn-lg btn-block active">
+                        <p></p>
+                        <p></p>
+                        แยกตัว
+                        <p></p>
+                        <p></p>
+                    </button>
+                </div>
+            </div>
+            <p></p>
+            <div class="row" style="padding: 0px 15px 0px 15px;">
+                <div class="progress timeout_2">
+                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                        style="width: 100%;text-align: left;" aria-valuenow="100" aria-valuemin="" aria-valuemax="100">
+                        หมดเวลา
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 
     </div>
     <!---             Interact             --->
@@ -74,21 +132,32 @@
 
     <!---           status right           --->
     <div class="status_right">
-        <h3 style="color: #fff;"><b id="speed"></b></h3>
+
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <h3 class="card-header">SPEED</h3>
+            <div class="card-body">
+                <h5 class="card-title"><b id="speed"></b></h5>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <h3 class="card-header">ALTITUDE</h3>
+            <div class="card-body">
+                <h5 class="card-title"><b id="altitude"></b></h5>
+            </div>
+        </div>
+
     </div>
     <!---           status right           --->
 
 
     <!---          status footer           --->
+    <div class="t_minus">
+        <h3 id="time_status"></h3>
+        <h3 class="time"><b id="min"></b> : <b id="sec"></b> </h3>
+        <br>
+    </div>
     <div class="status_footer d-flex justify-content-center align-items-end">
-        <div style="    position: fixed;
-    bottom: 4%;
-    left: 50.6%;
-    z-index: 1;">
-            <h3 style="color: #fff;"><b id="min"></b> : <b id="sec"></b> </h3>
-            <br>
-            <button style="position:fixed;" type="button" class="btn btn-primary" onclick="start();">START</button>
-        </div>
         <div class="left"><img class="circle" src="/IMG/element/LEFT.png" alt=""></div>
         <div class="right"><img class="circle" src="/IMG/element/RIGHT.png" alt=""></div>
     </div>
