@@ -1,11 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&display=swap");
 html {
   font-family: "Mitr", sans-serif;
-  background: rgb(218, 218, 218);
+  background: rgb(170 235 242);
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
+.bg_animation {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    min-width: 100%;
+    min-height: 100%;
+  }
 .logo {
   position: fixed;
   z-index: 999;
@@ -159,15 +167,10 @@ html {
   top: -1300px;
 }
 
-.eart_iss {
+.earth {
   position: fixed;
-  height: 100%;
   width: 100%;
-  top: 300%;
-}
-.eart_iss .eart {
-  position: absolute;
-  width: 130%;
+  top: 120%;
   height: auto;
 }
 

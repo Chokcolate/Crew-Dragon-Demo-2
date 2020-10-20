@@ -38,7 +38,7 @@ var i = setInterval(function interv() {
   
 
     //   CONTROL TWEEN AND TIMELINE    //
-    else if ((minn == 0 && parseInt(secc) == 57)) { max_q(); }
+    else if ((minn == 0 && parseInt(secc) == 56)) { max_q(); }
     else if ((minn == 2 && parseInt(secc) == 33)) { meco(); }
     else if ((minn == 2 && parseInt(secc) == 36)) { separation_1st(); }
     else if ((minn == 2 && parseInt(secc) == 44)) { start_2nd(); }
@@ -63,7 +63,7 @@ var i = setInterval(function interv() {
 
 
 CustomEase.create("hop", "M0,0 C0.176,0.056 0.306,-0.028 0.616,0.244 0.661,0.283 0.798,0.468 1,0.568");
-gsap.to(".eart", { rotation: -1000, duration: 250 });
+gsap.to(".earth", { rotation: -1000, duration: 250 });
 gsap.to(".start", { display: 'block', opacity:1, duration: 1 });
 
 //       COUNT_DOWN
@@ -127,6 +127,8 @@ function liftoff() {
   gsap.to(".circle", { rotation: -29.5, duration: 7 });
   gsap.to(".left", { opacity: 1, duration: 1 });
   gsap.to(".right", { opacity: 1, duration: 1 });
+  gsap.to(".onearth", { top: '120%', duration: 8 });
+  gsap.to("html", { background:'rgb(10 19 37)', duration:20});
   setTimeout(function () { gsap.to(".dragon", { rotation: 85,  duration: 15 }); }, 7000);
   tl.to(".pad", { yPercent: 300, duration: 2.5, ease: "hop" })
     .to(".pad", { display:'none' })
@@ -135,6 +137,7 @@ function liftoff() {
     .to(".c2", { yPercent: 400, xPercent: -60, duration: 1.5 })
     .to(".c3", { yPercent: 400, xPercent: -100, duration: 1 })
     .to(".parallax", { scale: 0.2, xPercent: 0, duration: 5 });
+    
 }
 
 
@@ -143,20 +146,20 @@ function max_q() {
   gsap.to(".start-engine", { display: 'none',opacity:0, duration: 1 });
   gsap.to(".max-q", { display: 'block',opacity:1, duration: 1 });
   gsap.to(".circle", { rotation: -51.5,duration: 11.5});
-  gsap.to(".tl_1", { display: 'block', duration: 0.5, text: "00:00:58 MAX-Q" });
   gsap.to(".parallax", { scale: 0.7, xPercent: 0, duration: 3 });
-  gsap.to(".eart_iss", { scale: 0.7, xPercent: 0, duration: 3 });
+  gsap.to(".earth", { scale: 1, xPercent: 0, duration: 20 });
 }
 
 //       MECO
 function meco() {
   gsap.to(".max-q", { display: 'none',opacity:0, duration: 1 });
-  gsap.to(".eart", { top: '-250%', duration: 10 });
   gsap.to(".trail_1st", { display: 'none', duration: 0.5});
+  gsap.to(".galaxy", {display: 'block', opacity: 1, duration: 10});
 }
 
 //       1ST SEPARATION
 function return_separation_1st() {
+  gsap.to(".earth", { top: '45%', duration: 5 });
   gsap.to(".separation-1st", { display: 'block',opacity:1, duration: 1 });
   gsap.to(".dragon ._1st", { top: 10000, duration: 5, ease: "hop" })
   gsap.to(".separation_1st", { opacity: 0, display: 'none', duration: 1 });
@@ -164,7 +167,6 @@ function return_separation_1st() {
 function separation_1st() {
   setTimeout(function () { return_separation_1st() }, 9000);
   gsap.to(".parallax", { scale: 1, xPercent: 0, duration: 3 });
-  gsap.to(".eart_iss", { scale: 0.2, xPercent: 0, duration: 3 });
   gsap.to(".separation_1st", { opacity: 1, display: 'block', duration: 1 });
   gsap.to(".timeout_2", { width: '100%', duration: 10 });
 }
@@ -174,7 +176,7 @@ function start_2nd() {
   gsap.to(".separation-1st", { display: 'none',opacity:0, duration: 1 });
   gsap.to(".circle", { rotation: -97.18, duration: 20 });
   gsap.to(".parallax", { scale: 0.2, xPercent: 0, duration: 3 });
-  gsap.to(".eart_iss", { scale: 1, xPercent: 0, duration: 3 });
+  gsap.to(".earth", { scale: 1, xPercent: 0, duration: 3 });
   gsap.to(".trail_2nd", { display: 'block', duration: 0.5});
 }
 //       1ST ENTRY BURN
@@ -213,7 +215,7 @@ function return_separation_2nd() {
 function separation_2nd() {
   setTimeout(function () { return_separation_2nd() }, 9000);
   gsap.to(".parallax", { scale: 1, xPercent: 0, duration: 3 });
-  gsap.to(".eart_iss", { scale: 0.2, xPercent: 0, duration: 3 });
+  gsap.to(".earth", { scale: 0.2, xPercent: 0, duration: 3 });
   gsap.to(".separation_2nd", { opacity: 1, display: 'block', duration: 1 });
   gsap.to(".timeout_3", { width: '100%', duration: 10 });
 }
@@ -221,7 +223,7 @@ function separation_2nd() {
 
 function end() {
    gsap.to(".parallax", { scale: 0.2, xPercent: 0, duration: 3 });
-  gsap.to(".eart_iss", { scale: 1, xPercent: 0, duration: 3 });
+  gsap.to(".earth", { scale: 1, xPercent: 0, duration: 3 });
 }
 
 function restart() {
