@@ -21,6 +21,7 @@ function start() {
   minn = 45; secc = 60;
   t_minus_speed = 20;
   count_down();
+  gsap.to(".start", { display: 'none',opacity:1, duration: 2 });
 }
 
 
@@ -61,8 +62,8 @@ var i = setInterval(function interv() {
 
 
 CustomEase.create("hop", "M0,0 C0.176,0.056 0.306,-0.028 0.616,0.244 0.661,0.283 0.798,0.468 1,0.568");
-TweenMax.to("body", {background:"linear-gradient(to right, #f00, #0f0, #00f, #600, #060)"});
 gsap.to(".eart", { rotation: -1000, duration: 250 });
+gsap.to(".start", { display: 'block', opacity:1, duration: 1 });
 
 //       COUNT_DOWN
 function count_down() {
@@ -113,11 +114,14 @@ function go_nogo() {
   setTimeout(function () { return_go() }, 9000);
   gsap.to(".timeout_1", { width: '100%', duration: 10 });
   gsap.to(".go_nogo", { display: 'block', opacity: 1, duration: 1 });
+  gsap.to(".t_minus ", {display: 'none', opacity: 0, duration: 1});
 }
 
 //       LIFTOFF
 function liftoff() {
   time_speed = 1;
+  gsap.to(".start-engine", { display: 'block',opacity:1, duration: 1 });
+  gsap.to(".t_minus ", {display: 'block', opacity: 1, duration: 1});
   gsap.to(".t_minus ", {top: '90%', left:'48%', color:'#fff'});
   gsap.to(".circle", { rotation: -29.5, duration: 7 });
   gsap.to(".left", { opacity: 1, duration: 1 });
@@ -135,6 +139,8 @@ function liftoff() {
 
 //       MAX_Q
 function max_q() {
+  gsap.to(".start-engine", { display: 'none',opacity:0, duration: 1 });
+  gsap.to(".max-q", { display: 'block',opacity:1, duration: 1 });
   gsap.to(".circle", { rotation: -51.5,duration: 11.5});
   gsap.to(".tl_1", { display: 'block', duration: 0.5, text: "00:00:58 MAX-Q" });
   gsap.to(".parallax", { scale: 0.7, xPercent: 0, duration: 3 });
@@ -143,13 +149,14 @@ function max_q() {
 
 //       MECO
 function meco() {
+  gsap.to(".max-q", { display: 'none',opacity:0, duration: 1 });
   gsap.to(".eart", { top: '-250%', duration: 10 });
-  gsap.to(".tl_2", { display: 'block', duration: 0.5, text: "00:02:33 MECO" });
   gsap.to(".trail_1st", { display: 'none', duration: 0.5});
 }
 
 //       1ST SEPARATION
 function return_separation_1st() {
+  gsap.to(".separation-1st", { display: 'block',opacity:1, duration: 1 });
   gsap.to(".dragon ._1st", { top: 10000, duration: 5, ease: "hop" })
   gsap.to(".separation_1st", { opacity: 0, display: 'none', duration: 1 });
 }
@@ -163,13 +170,15 @@ function separation_1st() {
 
 //       2ND START
 function start_2nd() {
+  gsap.to(".separation-1st", { display: 'none',opacity:0, duration: 1 });
   gsap.to(".circle", { rotation: -97.18, duration: 20 });
-    gsap.to(".parallax", { scale: 0.2, xPercent: 0, duration: 3 });
+  gsap.to(".parallax", { scale: 0.2, xPercent: 0, duration: 3 });
   gsap.to(".eart_iss", { scale: 1, xPercent: 0, duration: 3 });
   gsap.to(".trail_2nd", { display: 'block', duration: 0.5});
 }
 //       1ST ENTRY BURN
 function entry_burn_1st() {
+  gsap.to(".entry-burn", { display: 'block',opacity:1, duration: 1 });
   gsap.to(".circle", { rotation: -118.18,duration: 10});
   tl.to(".landing_1", { display:'block', duration: 5 })
     .to(".landing_3", { display: 'block', duration: 2 })
@@ -178,13 +187,17 @@ function entry_burn_1st() {
 
 //       SECO-1
 function seco_1() {
+  gsap.to(".entry-burn", { display: 'none',opacity:0, duration: 1 });
+  gsap.to(".seco-1", { display: 'block',opacity:1, duration: 1 });
   gsap.to(".circle", { rotation: -120.65, duration: 6 });
   gsap.to(".trail_2nd", { display: 'none', duration: 0.5});
  }
 
 //       1ST LANDING
 function landing_1st() { 
+  gsap.to(".seco-1", { display: 'none',opacity:0, duration: 1 });
   gsap.to(".circle", { rotation: -152.8, duration: 22});
+  gsap.to(".landing", { display: 'block',opacity:1, duration: 1 });
   gsap.to(".landing_1", { display:'none'})
   gsap.to(".landing_2", { display: 'none' });
   gsap.to(".landing_3", { display:'none'});
@@ -192,6 +205,7 @@ function landing_1st() {
 
 //       2ND SEPARATION
 function return_separation_2nd() { 
+  gsap.to(".landing", { display: 'none',opacity:0, duration: 1 });
   gsap.to(".dragon ._2nd", { top: 10000, duration: 5, ease: "hop" })
   gsap.to(".separation_2nd", { opacity: 0, display: 'none', duration: 1 });
 }
