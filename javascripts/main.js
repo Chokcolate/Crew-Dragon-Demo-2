@@ -47,6 +47,7 @@ var i = setInterval(function interv() {
     else if ((minn == 9 && parseInt(secc) == 3)) { landing_1st(); }
     else if ((minn == 12 && parseInt(secc) == 1)) { separation_2nd(); }
     else if ((minn == 13 && parseInt(secc) == 1)) { end(); }
+    else if ((minn == 15 && parseInt(secc) == 1)) { restart(); }
   
   }
 
@@ -129,11 +130,11 @@ function liftoff() {
   setTimeout(function () { gsap.to(".dragon", { rotation: 85,  duration: 15 }); }, 7000);
   tl.to(".pad", { yPercent: 300, duration: 2.5, ease: "hop" })
     .to(".pad", { display:'none' })
-    .to(".parallax", { scale: 0.7, y: -80, duration: 2.5 })
+    .to(".parallax", { scale: 0.7, y: -100, duration: 2.5 })
     .to(".c1", { yPercent: 500, xPercent: -20, duration: 2 })
     .to(".c2", { yPercent: 400, xPercent: -60, duration: 1.5 })
     .to(".c3", { yPercent: 400, xPercent: -100, duration: 1 })
-    .to(".parallax", { scale: 0.2, xPercent: -10, duration: 5 });
+    .to(".parallax", { scale: 0.2, xPercent: 0, duration: 5 });
 }
 
 
@@ -221,4 +222,9 @@ function separation_2nd() {
 function end() {
    gsap.to(".parallax", { scale: 0.2, xPercent: 0, duration: 3 });
   gsap.to(".eart_iss", { scale: 1, xPercent: 0, duration: 3 });
+}
+
+function restart() {
+  time_speed = 0;
+  alert("end");
 }
