@@ -14,131 +14,127 @@
 <body>
 
     <img class="bg_animation onearth" src="/IMG/element/bg_onearth.png" alt="" srcset="">
-    <img class="bg_animation galaxy" style="bottom:100%;display: none;opacity: 0;"src="/IMG/element/bg_galaxy.jpg" alt="" srcset="">
+    <img class="bg_animation galaxy" style="bottom:100%;display: none;opacity: 0;" src="/IMG/element/bg_galaxy.jpg"
+        alt="" srcset="">
+
+    <canvas></canvas>
+
 
     <!---             timeline             --->
-    <!---             timeline             --->
-    <div class="timeline_box">
-        <h6 class="tl_1"></h6>
-        <h6 class="tl_2"></h6>
-        <h6 class="tl_3"></h6>
-        <h6 class="tl_4"></h6>
-        <h6 class="tl_5"></h6>
-        <h6 class="tl_6"></h6>
-        <h6 class="tl_7"></h6>
-        <h6 class="tl_8"></h6>
-        <h6 class="tl_9"></h6>
+    <div class="timeline_box card" style="min-width: 35%;position: fixed;background-color: rgb(0 0 0 / 60%);
+  border: none; display: none;">
+        <div class="card-body">
+            <p class="card-text">
+            <h6 class="tl_1">T-minus: 45:00 – Launch director ให้สัญญาณการโหลดเชื้อเพลิงขึ้นยาน</h6>
+            <h6 class="tl_2">T-minus: 42:00 – Undock Crew Access Arm (ทางเดินขึ้นยาน)</h6>
+            <h6 class="tl_3">T-minus: 37:00 – Launch Escape System ถูกสลับเป็นโหมด Armed</h6>
+            <h6 class="tl_4">T-minus: 35:00 – เริ่ม Load RP-1 Kerosene (เชื้อเพลิงจรวด) ขึ้นจรวด First stage LOX
+                (Liquid Oxygen)</h6>
+            <h6 class="tl_5">T-minus: 16:00 – เริ่ม Load RP-1 Kerosene ขึ้นจรวด Second stage LOX</h6>
+            <h6 class="tl_6">T-minus: 07:00 – เริ่มการหล่อเย็นเครื่องยนต์ Falcon 9</h6>
+            <h6 class="tl_7">T-minus: 05:00 – ตัดพลังงานไฟฟ้าจาก Ground Power Unit เป็น Internal Power
+                (ใช้ไฟจากในยาน)</h6>
+            <h6 class="tl_8">T-minus: 01:00 – Pre-launch Checks (ตรวจสอบขั้นสุดท้ายก่อนการปล่อย)
+                และเริ่มการอัดความดันในถังเชื้อเพลิง (Propellant Tank Pressurization)</h6>
+            <h6 class="tl_9">T-minus: 00:45 – Launch director ให้สัญญาณ Go/No Go</h6>
+            </p>
+            <button type="button" onclick="liftoff()" class="btn btn-success btn-block btn-lg">
+                Next
+            </button>
+        </div>
     </div>
 
-    <div class="start-engine card text-white bg-dark mb-3" style="position: fixed;display: none;">
+    <div class="start-engine card text-white mb-3" style="position: fixed;display: none;background-color: rgb(0 0 0 / 60%);
+  border: none;">
         <div class="card-body">
-          <p class="card-text">1. NASA พร้อมด้วย Falcon 9 ของ SpaceX ที่บรรทุกยานอวกาศ Crew Dragon (Endeavour) และนักบินอวกาศสองคน Doug Hurley และ Robert Behnken ได้เปิดตัวภารกิจ Demo-2 ในวันที่ 30 พฤษภาคม 2020 เวลา 15:22:45 น. ซึ่งปล่อยจากฐาน Launch Complex 39A ที่ Kennedy Space Center, Cape Canaveral, Florida, USA</p>
+            <p class="card-text">1. NASA พร้อมด้วย Falcon 9 ของ SpaceX ที่บรรทุกยานอวกาศ Crew Dragon (Endeavour)
+                และนักบินอวกาศสองคน Doug Hurley และ Robert Behnken ได้เปิดตัวภารกิจ Demo-2 ในวันที่ 30 พฤษภาคม 2020 เวลา
+                15:22:45 น. ซึ่งปล่อยจากฐาน Launch Complex 39A ที่ Kennedy Space Center, Cape Canaveral, Florida, USA
+            </p>
+            <button type="button" onclick="start()" class="btn btn-success btn-block btn-lg">
+                Next
+            </button>
         </div>
     </div>
 
 
-      <div class="max-q card text-white bg-dark mb-3" style="position: fixed;display: none;">
+    <div class="max-q card text-white mb-3" style="position: fixed;display: none;background-color: rgb(0 0 0 / 60%);
+  border: none;">
         <div class="card-body">
-          <h5 class="card-title">MAX-Q</h5>
-          <p class="card-text">2A. ณ เวลาที่หนึ่งนาทีหนึ่งวินาทีหลังการปล่อย (T + 01: 01) จะมีการอ่านค่าความดันไดนามิกสูงสุด (Max-Q) ซึ่งเป็นจุดที่จรวดได้รับความเค้นเชิงกลสูงสุดเนื่องจากการรวมกันของความหนาแน่นของอากาศและความเร็ว เครื่องยนต์ M-ID ขั้นแรกจะเผาไหม้เป็นเวลาที่ 2นาที 38 วินาทีก่อนที่เครื่องยนต์หลักจะตัด (MECO) การแยกจากขั้นที่สองเกิดขึ้นเวลาที่2นาที 40 วินาทีหลังจากการยกขึ้นที่ระดับความสูง 51 เศษหนึ่งส่วนสองไมล์ / 83 กิโลเมตร</p>
+            <h5 class="card-title">MAX-Q</h5>
+            <p class="card-text">2A. ณ เวลาที่หนึ่งนาทีหนึ่งวินาทีหลังการปล่อย (T + 01: 01)
+                จะมีการอ่านค่าความดันไดนามิกสูงสุด (Max-Q)
+                ซึ่งเป็นจุดที่จรวดได้รับความเค้นเชิงกลสูงสุดเนื่องจากการรวมกันของความหนาแน่นของอากาศและความเร็ว
+                เครื่องยนต์ M-ID ขั้นแรกจะเผาไหม้เป็นเวลาที่ 2นาที 38 วินาทีก่อนที่เครื่องยนต์หลักจะตัด (MECO)
+                การแยกจากขั้นที่สองเกิดขึ้นเวลาที่2นาที 40 วินาทีหลังจากการยกขึ้นที่ระดับความสูง 51 เศษหนึ่งส่วนสองไมล์
+                / 83 กิโลเมตร</p>
+            <button type="button" onclick="max_q();" class="btn btn-success btn-block btn-lg">Next</button>
         </div>
-      </div>
+    </div>
 
 
-      <div class="separation-1st card text-white bg-dark mb-3" style="position: fixed;display: none;">
-        <div class="card-body"> 
-          <h5 class="card-title">MECO AND SEPARATION 1ST </h5>
-          <p class="card-text">เมื่อแยกจากกันแล้ว, ด่านแรกทำการซ้อมรบแบบหมุน ในขณะที่จรวด Falcon 9 ที่สามารถนำกลับมาใช้ใหม่ได้เริ่มกลับเข้ามาอีกครั้งเครื่องขับดันก๊าซเย็นที่อยู่ด้านบนจะ "พลิก" จรวด เมื่อเวลา7นาที 19 วินาที จะเริ่มกลับเข้ามาใหม่</p>
-        </div>
-      </div>
-
-      <div class="entry-burn card text-white bg-dark mb-3" style="position: fixed;display: none;">
+    <div class="meco card text-white mb-3" style="position: fixed;display: none;background-color: rgb(0 0 0 / 60%);
+  border: none;">
         <div class="card-body">
-          <h5 class="card-title">ENTRY BURN</h5>
-          <p class="card-text">ในขณะที่ด่านแรกดิ่งลงจากขอบอวกาศผ่านชั้นบรรยากาศของโลก
-            การเผาไหม้ทางเข้าจะดำเนินการโดยใช้เครื่องยนต์ Merlin สามในเก้าเครื่องที่ควบคุมความเร็ว เพื่อลดความเร็วก่อนที่จะปิดเครื่อง
-            ปีกทนความร้อนพับได้ที่เรียกว่า Grid Fins เพื่อช่วยบังคับ First Stage ไปยังเป้าหมายลงจอด เมื่อเวลา8นาที 58 วินาทีจรวดจะเริ่มเผาไหม้
+            <h5 class="card-title">MECO AND SEPARATION 1ST </h5>
+            <p class="card-text">เมื่อแยกจากกันแล้ว, ด่านแรกทำการซ้อมรบแบบหมุน ในขณะที่จรวด Falcon 9
+                ที่สามารถนำกลับมาใช้ใหม่ได้เริ่มกลับเข้ามาอีกครั้งเครื่องขับดันก๊าซเย็นที่อยู่ด้านบนจะ "พลิก" จรวด
+                เมื่อเวลา7นาที 19 วินาที จะเริ่มกลับเข้ามาใหม่</p>
+            <button type="button" onclick="meco();" class="btn btn-success btn-block btn-lg">Next</button>
+
+        </div>
+    </div>
+
+    <div class="entry-burn card text-white mb-3" style="position: fixed;display: none;background-color: rgb(0 0 0 / 60%);
+  border: none;">
+        <div class="card-body">
+            <h5 class="card-title">ENTRY BURN</h5>
+            <p class="card-text">ในขณะที่ด่านแรกดิ่งลงจากขอบอวกาศผ่านชั้นบรรยากาศของโลก
+                การเผาไหม้ทางเข้าจะดำเนินการโดยใช้เครื่องยนต์ Merlin สามในเก้าเครื่องที่ควบคุมความเร็ว
+                เพื่อลดความเร็วก่อนที่จะปิดเครื่อง
+                ปีกทนความร้อนพับได้ที่เรียกว่า Grid Fins เพื่อช่วยบังคับ First Stage ไปยังเป้าหมายลงจอด เมื่อเวลา8นาที
+                58 วินาทีจรวดจะเริ่มเผาไหม้
             </p>
-        </div>
-      </div>
+            <button type="button" onclick="entry_burn_1st();" class="btn btn-success btn-block btn-lg">Next</button>
 
-      <div class="landing card text-white bg-dark mb-3" style="position: fixed;display: none;">
+        </div>
+    </div>
+
+    <div class="seco-1 card text-white mb-3" style="position: fixed;display: none;background-color: rgb(0 0 0 / 60%);
+  border: none;">
         <div class="card-body">
-          <h5 class="card-title">LANDING</h5>
-          <p class="card-text">
-            9นาที 31 วินาทีหลังจากการขึ้นลงด่านแรกของ Falcon 9 ทำการทัชดาวน์เบา ๆ บนดาดฟ้าของเรือโดรนอิสระของ Course I Still Love You ซึ่งลอยอยู่นอกชายฝั่งฟลอริดาในมหาสมุทรแอตแลนติก
+            <h5 class="card-title">SECO</h5>
+            <p class="card-text">
+                หลังจาก8นาที 50 วินาทีเครื่องยนต์สุญญากาศขั้นที่สอง Merlin จะปิดตัวลง (SECO-1) หลังจากชายฝั่งไม่นาน Crew
+                Dragon ก็แยกตัวออกจากด่านที่สอง 12
+                นาทีและแปดวินาทีหลังจากเปิดตัวออกจากเวทีไปเกลือกกลิ้งในชั้นบรรยากาศเหนือมหาสมุทรอินเดีย เมื่อ Crew
+                Dragon มาถึงวงโคจรเริ่มต้นลูกเรือและส่วนควบคุมภารกิจ SpaceX
+                จะทดสอบระบบยานอวกาศหลายระบบรวมถึงการควบคุมด้านสิ่งแวดล้อมจอสัมผัสและเครื่องผลักดันการหลบหลีกเพื่อตรวจสอบว่า
+                the Crew กำลังจะไปพบกับสถานีอวกาศนานาชาติ (ISS) </p>
+
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">LANDING</h5>
+            <p class="card-text">
+                9นาที 31 วินาทีหลังจากการขึ้นลงด่านแรกของ Falcon 9 ทำการทัชดาวน์เบา ๆ บนดาดฟ้าของเรือโดรนอิสระของ
+                Course
+                I Still Love You ซึ่งลอยอยู่นอกชายฝั่งฟลอริดาในมหาสมุทรแอตแลนติก
             </p>
-        </div>
-      </div>
+            <button type="button" onclick="goto_separation_2nd();"
+                class="goto_separation_2nd btn btn-success btn-block btn-lg" style="display: none;">Next</button>
 
-      <div class="seco-1 card text-white bg-dark mb-3" style="position: fixed;display: none;">
-        <div class="card-body">
-          <h5 class="card-title">SECO</h5>
-          <p class="card-text">
-            หลังจาก8นาที 50 วินาทีเครื่องยนต์สุญญากาศขั้นที่สอง Merlin จะปิดตัวลง (SECO-1) หลังจากชายฝั่งไม่นาน Crew Dragon ก็แยกตัวออกจากด่านที่สอง 12 นาทีและแปดวินาทีหลังจากเปิดตัวออกจากเวทีไปเกลือกกลิ้งในชั้นบรรยากาศเหนือมหาสมุทรอินเดีย เมื่อ Crew Dragon มาถึงวงโคจรเริ่มต้นลูกเรือและส่วนควบคุมภารกิจ SpaceX จะทดสอบระบบยานอวกาศหลายระบบรวมถึงการควบคุมด้านสิ่งแวดล้อมจอสัมผัสและเครื่องผลักดันการหลบหลีกเพื่อตรวจสอบว่า the Crew กำลังจะไปพบกับสถานีอวกาศนานาชาติ (ISS)            </p>
         </div>
-      </div>
+    </div>
     <!---             timeline             --->
 
 
     <!---             Interact             --->
     <div class="interactive">
 
-        <div class="start" style="top: 10%;">
-            <div class="row">
-                <div class="col">
-                    <button type="button" onclick="start()"
-                        class="btn btn-success btn-lg btn-block active">
-                        <p></p>
-                        <p></p>
-                        เริ่มภารกิจ
-                        <p></p>
-                        <p></p>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="go_nogo" style="top: 40%;">
-            <div class="row">
-                <div class="col">
-                    <button type="button" onclick="return_go()" class="btn btn-success btn-lg btn-block active">
-                        <p></p>
-                        <p></p>
-                        ไป
-                        <p></p>
-                        <p></p>
-                    </button>
-                </div>
-                <div class="col">
-                    <button type="button" onclick="return_nogo()" class="btn btn-danger  btn-lg btn-block active">
-                        <p></p>
-                        <p></p>
-                        ไม่ไป
-                        <p></p>
-                        <p></p>
-                    </button>
-                </div>
-            </div>
-            <p></p>
-            <div class="row" style="padding: 0px 15px 0px 15px;">
-                <div class="progress timeout_1">
-                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
-                        style="width: 100%;text-align: left;" aria-valuenow="100" aria-valuemin="" aria-valuemax="100">
-                        หมดเวลา
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
         <div class="separation_1st" style="top: 15%;">
             <div class="row">
                 <div class="col">
-                    <button type="button" onclick="return_separation_1st()"
-                        class="btn btn-success btn-lg btn-block active">
+                    <button type="button" onclick="separation_1st();" class="btn btn-success btn-lg btn-block active">
                         <p></p>
                         <p></p>
                         แยกตัว 1st falcon 9
@@ -163,8 +159,7 @@
         <div class="separation_2nd" style="top: 20%;">
             <div class="row">
                 <div class="col">
-                    <button type="button" onclick="return_separation_2nd()"
-                        class="btn btn-success btn-lg btn-block active">
+                    <button type="button" onclick="separation_2nd()" class="btn btn-success btn-lg btn-block active">
                         <p></p>
                         <p></p>
                         แยกตัว 2nd
@@ -200,7 +195,6 @@
             <img class="_1st" src="IMG/rocket/1st.png" alt="">
             <img class="trail_1st" src="/IMG/element/trail.png" alt="">
             <img class="trail_2nd" src="/IMG/element/trail.png" alt="">
-
         </div>
         <img class="pad" src="IMG/element/launch.png" alt="">
     </div>
@@ -224,17 +218,17 @@
     <!---           status right           --->
     <div class="status_right">
 
-        <div class="card text-white bg-dark mb-3" style="max-width: 19rem;">
+        <div class="card text-white mb-3" style="max-width: 19rem;">
             <h3 class="card-header">SPEED</h3>
             <div class="card-body">
-                <h5 class="card-title"><b id="speed"></b> km/h</h5>
+                <h5 class="card-title" style="color:#222;"><b id="speed"></b> km/h</h5>
             </div>
         </div>
 
-        <div class="card text-white bg-dark mb-3" style="max-width: 19rem;">
+        <div class="card text-white mb-3" style="max-width: 19rem;">
             <h3 class="card-header">ALTITUDE</h3>
             <div class="card-body">
-                <h5 class="card-title"><b id="altitude"></b> km</h5>
+                <h5 class="card-title" style="color:#222;"><b id="altitude"></b> km</h5>
             </div>
         </div>
 
@@ -243,12 +237,12 @@
 
 
     <!---          status footer           --->
-    <div class="t_minus">
+    <div class="t_minus d-flex justify-content-center">
         <h3 id="time_status"></h3>
         <h3 class="time"><b id="min"></b> : <b id="sec"></b> </h3>
         <br>
     </div>
-    <div class="status_footer d-flex justify-content-center align-items-end">
+    <div class="status_footer">
         <div class="left"><img class="circle" src="/IMG/element/LEFT.png" alt=""></div>
         <div class="right"><img class="circle" src="/IMG/element/RIGHT.png" alt=""></div>
     </div>
@@ -261,9 +255,10 @@
 
     <!---              cloud               --->
     <div class="effect">
-        <img class="cloud c1" src="/IMG/element/c1.png" alt="" style="width: 100%;height: auto;">
-        <img class="cloud c2" src="/IMG/element/c2.png" alt="" style="width: 150%;height: auto;left: 40%;">
-        <img class="cloud c3" src="/IMG/element/c3.png" alt="" style="width: 100%;height: auto;left: 40%;">
+        <img class="cloud c1" src="/IMG/element/c1.png" alt="" style="width: 150%;height: auto;">
+        <img class="cloud c2" src="/IMG/element/c3.png" alt="" style="width: 140%;margin-left:-20%;height: auto;">
+        <img class="cloud c3" src="/IMG/element/c2.png" alt="" style="width: 150%;height: auto;">
+
     </div>
     <!---              cloud               --->
 
@@ -271,7 +266,9 @@
 
 
     <!---           EART AND ISS           --->
-    <img class="earth" src="IMG/element/earth4.png" alt="">
+    <div class="out_of_earth">
+        <img class="earth" src="IMG/element/earth4.png" alt="">
+    </div>
     <!---           EART AND ISS           --->
 
 
@@ -282,6 +279,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/TextPlugin.min.js"></script>
 <script src="/javascripts/CustomEase.min.js"></script>
-<script src="./javascripts/main.js"></script>
+<script type="text/javascript" src="./javascripts/main.js"></script>
+<script type="text/javascript" src="/javascripts/star.js"></script>
 
 </html>
