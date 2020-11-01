@@ -77,8 +77,11 @@ var i = setInterval(function interv() {
       gsap.to(".dragon", { scale: 0.2, duration: 2 });
       gsap.to(".out_of_earth", { scale: 1, duration: 2 });
     }
-    else if ((minn == 14 && parseInt(secc) == 0)) {
+    else if (minn >= 14) {
       time_speed = 0;
+      min.innerHTML = '-- ';
+      sec.innerHTML = ': --';
+      to_iss();
     }
     //else if ((minn == 8 && parseInt(secc) == 46)) { time_speed = 0.2; acceleration = 0.5; altitude_speed = 0.01;} //SLOW
     //else if ((minn == 9 && parseInt(secc) == 20)) { time_speed = 1.2; acceleration = 0.01;}   //SPEED
@@ -86,8 +89,8 @@ var i = setInterval(function interv() {
   }
   cumulative_speed += acceleration;
   altitude_cumulative += altitude_speed;
-  speed.innerHTML = parseInt(cumulative_speed);
-  altitude.innerHTML = altitude_cumulative.toFixed(1);
+  //speed.innerHTML = parseInt(cumulative_speed);
+  //altitude.innerHTML = altitude_cumulative.toFixed(1);
   min.innerHTML = minn;
   sec.innerHTML = parseInt(secc);
 }, 100);
@@ -241,9 +244,13 @@ function separation_2nd() {
   tl.to(".dragon", { scale: 0.7, duration: 2 })
     .to(".dragon ._2nd", { top: 10000, duration: 5, ease: "hop" });
 }
-function end() {
-   gsap.to(".dragon", { scale: 0.2, xPercent: 0, duration: 3 });
-  gsap.to(".earth", { scale: 1, xPercent: 0, duration: 3 });
+function to_iss() {
+  gsap.to(".iss", { right: '15%', duration: 3 });
+  gsap.to(".left, .right, .t_minus", { opacity: 0, duration: 2 })
+  
+}
+function dock_to_iss(){
+
 }
 
 function restart() {
