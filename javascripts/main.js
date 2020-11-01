@@ -77,6 +77,9 @@ var i = setInterval(function interv() {
       gsap.to(".dragon", { scale: 0.2, duration: 2 });
       gsap.to(".out_of_earth", { scale: 1, duration: 2 });
     }
+    else if ((minn == 14 && parseInt(secc) == 0)) {
+      time_speed = 0;
+    }
     //else if ((minn == 8 && parseInt(secc) == 46)) { time_speed = 0.2; acceleration = 0.5; altitude_speed = 0.01;} //SLOW
     //else if ((minn == 9 && parseInt(secc) == 20)) { time_speed = 1.2; acceleration = 0.01;}   //SPEED
   
@@ -210,7 +213,7 @@ function start_2nd() {
 function entry_burn_1st() {
   time_speed = 1;
   gsap.to(".circle", { rotation: -118.18, duration: 9 });
-  gsap.to(".entry-burn", { display: 'none', duration: 1 });s
+  gsap.to(".entry-burn", { display: 'none', duration: 1 });
   tl.to(".landing_1", { display:'block', duration: 3 })
     .to(".landing_3", { display: 'block', duration: 2 })
     .to(".landing_2", { display: 'block', duration: 2 });
