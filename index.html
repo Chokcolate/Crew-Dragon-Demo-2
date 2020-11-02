@@ -125,67 +125,32 @@
 
         </div>
     </div>
-    <!---             timeline             --->
 
 
-    <!---             Interact             --->
-    <div class="interactive">
+    <button type="button" onclick="dock_to_iss();" class="dock_iss btn btn-success btn-block btn-lg" style="display: none;
+        position: fixed;
+        z-index: 999;
+        width: 20%;
+        left: 40%;
+        top:75%">
+        <p>
+        <p></p>
+        เชื่อมต่อกับ สถานีอวกาศนานาชาติ
+        </p>
+    </button>
+    <button type="button" onclick="docking();" class="docking btn btn-success btn-block btn-lg" style="display: none;
+        position: fixed;
+        z-index: 999;
+        width: 20%;
+        left: 40%;
+        top:75%">
+        <p>
+        <p></p>
+        เชื่อมต่อ
+        </p>
+    </button>
 
-        <div class="separation_1st" style="top: 15%;">
-            <div class="row">
-                <div class="col">
-                    <button type="button" onclick="separation_1st();" class="btn btn-success btn-lg btn-block active">
-                        <p></p>
-                        <p></p>
-                        แยกตัว 1st falcon 9
-                        <p></p>
-                        <p></p>
-                    </button>
-                </div>
-            </div>
-            <p></p>
-            <div class="row" style="padding: 0px 15px 0px 15px;">
-                <div class="progress timeout_2">
-                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
-                        style="width: 100%;text-align: left;" aria-valuenow="100" aria-valuemin="" aria-valuemax="100">
-                        หมดเวลา
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="separation_2nd" style="top: 20%;">
-            <div class="row">
-                <div class="col">
-                    <button type="button" onclick="separation_2nd()" class="btn btn-success btn-lg btn-block active">
-                        <p></p>
-                        <p></p>
-                        แยกตัว 2nd
-                        <p></p>
-                        <p></p>
-                    </button>
-                </div>
-            </div>
-            <p></p>
-            <div class="row" style="padding: 0px 15px 0px 15px;">
-                <div class="progress timeout_3">
-                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
-                        style="width: 100%;text-align: left;" aria-valuenow="100" aria-valuemin="" aria-valuemax="100">
-                        หมดเวลา
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-    </div>
-    <!---             Interact             --->
-
-
+    <!--- timeline --->
 
     <!--- CREW DRAGON DEMO2 AND 39A COMPLEX--->
     <div class="parallax d-flex justify-content-center align-items-end">
@@ -218,15 +183,90 @@
     <!---           status right           --->
     <div class="status_orbit">
 
-        <div class="activated">
+        <div class="orbit_range">
+            <div class="line" style="z-index: 1;">
+                <img class="orbit_state ob_1" src="/IMG/element/vector_plane.png" alt="" srcset="" style="top:75%;">
+                <img class="orbit_state ob_2" src="/IMG/element/vector_astronaut.png" alt="" srcset="" style="top:50%;">
+                <img class="orbit_state ob_3" src="/IMG/element/vector_comet.png" alt="" srcset="" style="top:25%;">
+                <img class="orbit_state ob_4" src="/IMG/element/vector_ss.png" alt="" srcset="">
+            </div>
+        </div>
 
-            <div class="line" style="background: #2fa8e4;">.</div>
+        <div class="activated">
+            <div class="line" style="background: #ffffff;">
+
+            </div>
         </div>
 
         <div class="not_activated">
-            <div class="line" style="background:#777777;">.</div>
-            <img src="/IMG/element/icon_cdd2.png" class="icon_cdd2" alt="">
+            <div class="line" style="background: #ebebeb;">
+
+            </div>
+            <div style="position: absolute;width: fit-content;z-index: 1;right: 8%;bottom: -20px;">
+                <a href="#" id="altitude" class="tag">0.9 KM</a>
+                <img src="/IMG/element/icon_cdd2.png" class="icon_cdd2" alt="" style="width: 65px;">
+            </div>
         </div>
+
+        <div class="troposphere orbit_info card text-white mb-3"
+            style="display:none;position: fixed;background-color: rgb(0 0 0 / 60%);">
+            <div class="card-body">
+                <h5 class="card-title">โทรโพสเฟียร์ (troposphere)</h5>
+                <p class="card-text">
+                    เป็นชั้นบรรยากาศที่อยู่สูงจากพื้นดินขึ้นไปประมาณ 0-10 กม. อุณหภูมิจะค่อยๆลดลงตามระดับความสูง
+                    และเป็นชั้นที่เกี่ยวข้องกับสภาพอากาศด้วย มีปรากฏการณ์ที่สำคัญ คือ ลม เมฆ พายุ หิมะ
+                </p>
+                <button type="button" onclick="" class="btn btn-danger btn-block btn-lg">ปิด</button>
+
+            </div>
+        </div>
+        <div class="stratosphere orbit_info card text-white mb-3"
+            style="display:none;position: fixed;background-color: rgb(0 0 0 / 60%);">
+            <div class="card-body">
+                <h5 class="card-title">สตราโทสเฟียร์ (stratosphere)</h5>
+                <p class="card-text">
+                    เป็นชั้นที่มีเสถียรภาพที่สุด มีความสูงตั้งแต่ 10-50 กม.
+                    อุณหภูมิในระดับล่างของชั้นนี้จะคงที่จนถึงระดับความสูง 20 กม.
+                    จากนั้นอุณหภูมิจะค่อย ๆ สูงขึ้น
+                    ชั้นนี้เป็นชั้นที่เครื่องบินจะบินเพราะไม่มีความแปรปรวนของสภาพอากาศและเครื่องบินทั้งหมดที่บินในชั้นนี้จะเป็นเครื่องบินไอพ่น
+                    บรรยากาศมีก๊าซโอโซนอยู่มากซึ่งจะช่วยสกัดแสงอัลตร้าไวโอเรต (UV) จาก
+                    ดวงอาทิตย์ไม่ให้มาถึงพื้นโลกมากเกินไป
+                </p>
+                <button type="button" onclick="" class="btn btn-danger btn-block btn-lg">ปิด</button>
+
+            </div>
+        </div>
+
+        <div class="mesosphere orbit_info card text-white mb-3"
+            style="display:none;position: fixed;background-color: rgb(0 0 0 / 60%);">
+            <div class="card-body">
+                <h5 class="card-title">มีโซสเฟียร์ (mesosphere)</h5>
+                <p class="card-text">
+                    เป็นช่วงบรรยากาศที่อยู่สูงจากพื้นดินในช่วง 50-80 กม.อุณหภูมิลดลงตามระดับความสูง
+                    อาจรวมเรียกบรรยากาศชั้นโทรโพสเฟียร์
+                    สตราโทสเฟียร์ และมีโซสเฟียร์ว่า โฮโมสเฟียร์
+                </p>
+                <button type="button" onclick="" class="btn btn-danger btn-block btn-lg">ปิด</button>
+
+            </div>
+        </div>
+
+        <div class="thermosphere orbit_info card text-white mb-3"
+            style="display:none;position: fixed;background-color: rgb(0 0 0 / 60%);">
+            <div class="card-body">
+                <h5 class="card-title">เทอร์โมสเฟียร์ (thermosphere)</h5>
+                <p class="card-text">
+                    ตั้งแต่ 80-600 กม. อุณหภูมิจะสูงขึ้นอย่างรวดเร็วในช่วงแรกแล้วอัตราการสูงขึ้นจะลดลง
+                    อุณหภูมิจะอยู่ระหว่าง 227-1,727 องศา
+                    มีอากาศเบาบางมาก และมีแก๊สต่าง ๆ ซึ่งอยู่ในลักษณะที่เป็นอนุภาคประจุไฟฟ้าเรียกว่า ไอออน
+                    สามารถสะท้อนคลื่นวิทยุบางชนิดได้
+                    อาจเรียกบรรยากาศในชั้นนี้ว่า ไอโอโนสเฟียร์ (ionosphere)
+                </p>
+                <button type="button" onclick="" class="btn btn-danger btn-block btn-lg">ปิด</button>
+
+            </div>
+        </div>
+
     </div>
     <!---           status right           --->
 
@@ -234,7 +274,7 @@
     <!---          status footer           --->
     <div class="t_minus d-flex justify-content-center">
         <h3 id="time_status"></h3>
-        <h3 class="time"><b id="min"></b> : <b id="sec"></b> </h3>
+        <h3 id="time"></h3>
         <br>
     </div>
     <div class="status_footer">
@@ -263,10 +303,12 @@
     <!---           EART AND ISS           --->
     <div class="out_of_earth">
         <img class="earth" src="IMG/element/earth4.png" alt="">
-        <img class="iss" src="/IMG/element/iss.png" alt="">
+        <img class="iss" src="/IMG/element/iss.png" alt="" style="display: none;">
     </div>
     <!---           EART AND ISS           --->
-
+    <img id="bg" class="dragon_dock" src="/IMG/element/dragon_dock.png" alt=""
+        style="display: none; opacity:0;left: -30%;">
+    <img id="bg" class="iss_dock" src="/IMG/element/iss_dock.png" alt="" style="display: none;opacity:0;">
 
 
 

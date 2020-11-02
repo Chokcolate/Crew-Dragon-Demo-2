@@ -3,8 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(CustomEase);
 
-min = document.getElementById("min");
-sec = document.getElementById("sec");
+time = document.getElementById("time");
 speed= document.getElementById("speed");
 altitude = document.getElementById("altitude");
 
@@ -34,28 +33,19 @@ var i = setInterval(function interv() {
     //       TIMER SPEED CONTROL      //
     
     if (parseInt(secc) == 60 || parseInt(secc) >= 60) { secc = 0; minn += 1; }
-    
-    //else if ((minn == 0 && parseInt(secc) == 1)) { acceleration = 18;altitude_speed = 0.162;}
-    
     else if ((minn == 0 && parseInt(secc) == 58)) {
       time_speed = 0; acceleration = 0; altitude_speed = 0;
       gsap.to(".max-q", { display: 'block', duration: 1 });
-    }   //SPEED     
-    //else if ((minn == 0 && parseInt(secc) == 58)) { time_speed = 1.2; acceleration = 74.184; altitude_speed = 0.85; }   //SPEED     
-    
+    }
     else if ((minn == 2 && parseInt(secc) == 33)) {
       time_speed = 0; acceleration = 0; altitude_speed = 0;
       gsap.to(".meco", { display: 'block', duration: 1 });
     }
-    //else if ((minn == 2 && parseInt(secc) == 29)) { time_speed = 0.2; acceleration = 0.5; altitude_speed = 0.05;} //SLOW
-    
-    //else if ((minn == 2 && parseInt(secc) == 50)) { time_speed = 2; acceleration = 80; altitude_speed = 1.2;}   //SPEED
-    
     else if ((minn == 3 && parseInt(secc) == 40)) {
       start_2nd();
     }
     else if ((minn == 7 && parseInt(secc) == 10)) {
-      time_speed = 0;
+      time_speed = 0; acceleration = 0; altitude_speed = 0;
       gsap.to(".entry-burn", { display: 'block', duration: 1 });
     }
     else if ((minn == 8 && parseInt(secc) == 46)) {
@@ -66,7 +56,7 @@ var i = setInterval(function interv() {
       landing_1st();
     }
     else if ((minn == 9 && parseInt(secc) == 20)) {
-      time_speed = 0;
+      time_speed = 0; acceleration = 0; altitude_speed = 0;
       gsap.to(".goto_separation_2nd", {display: 'block', duration: 1 })
     }
     else if ((minn == 12 && parseInt(secc) == 2)) {
@@ -79,25 +69,42 @@ var i = setInterval(function interv() {
     }
     else if (minn >= 14) {
       time_speed = 0;
-      min.innerHTML = '-- ';
-      sec.innerHTML = ': --';
       to_iss();
     }
-    //else if ((minn == 8 && parseInt(secc) == 46)) { time_speed = 0.2; acceleration = 0.5; altitude_speed = 0.01;} //SLOW
-    //else if ((minn == 9 && parseInt(secc) == 20)) { time_speed = 1.2; acceleration = 0.01;}   //SPEED
-  
+      
+    else if (altitude_cumulative >= 12 && altitude_cumulative <= 13) {
+     gsap.to(".ob_1", { background: '#2fa8e4' })
+     gsap.to(".troposphere", { display: 'block', duration: 1 });
+    }
+    else if (altitude_cumulative >= 36 && altitude_cumulative <= 37) {
+      gsap.to(".troposphere", { display: 'none'});
+     gsap.to(".ob_2", { background: '#2fa8e4' })
+     gsap.to(".stratosphere", { display: 'block', duration: 1 });
+    }
+    else if (altitude_cumulative >= 80 && altitude_cumulative <= 81) {
+     gsap.to(".stratosphere", { display: 'none'});
+     gsap.to(".ob_3", { background: '#2fa8e4' })
+     gsap.to(".mesosphere", { display: 'block', duration: 1 });
+    }
+    else if (altitude_cumulative >= 199 && altitude_cumulative <= 200) {
+     gsap.to(".mesosphere", { display: 'none'});
+     gsap.to(".ob_4", { background: '#2fa8e4' })
+      gsap.to(".thermosphere", { display: 'block', duration: 1 });
+      setTimeout(function () { gsap.to(".thermosphere", { display: 'none'}); }, 5000);
+    }
+
   }
   cumulative_speed += acceleration;
   altitude_cumulative += altitude_speed;
   //speed.innerHTML = parseInt(cumulative_speed);
-  //altitude.innerHTML = altitude_cumulative.toFixed(1);
-  min.innerHTML = minn;
-  sec.innerHTML = parseInt(secc);
+  altitude.innerHTML = altitude_cumulative.toFixed(1) + " KM";
+  time.innerHTML = minn+" : "+parseInt(secc);
 }, 100);
 
 
 
 CustomEase.create("hop", "M0,0 C0.176,0.056 0.306,-0.028 0.616,0.244 0.661,0.283 0.798,0.468 1,0.568");
+CustomEase.create("hop2", "M0,0 C0.272,0.146 0.513,0.335 0.658,0.462 0.818,0.602 0.818,1.301 1,1.3");
 gsap.to(".earth", { rotation: -1000, duration: 250 });
 gsap.to(".start-engine", { display: 'block', opacity:1, duration: 1 });
 
@@ -149,17 +156,17 @@ function count_down() {
         clearInterval(k);
       }
     }
-    min.innerHTML = minn;
-    sec.innerHTML = parseInt(secc);
+    time.innerHTML = minn+" : "+parseInt(secc);
 }, 100);
  }
 
 //       LIFTOFF        00:00
 function liftoff() {
-  time_speed = 0.5;acceleration = 18;altitude_speed = 0.162;
+  time_speed = 0.5; acceleration = 18; altitude_speed = 0.075;
+  gsap.to(".circle", { rotation: -29.5, duration: 13 });
+  gsap.to(".not_activated", { height: '76%', duration: 13 });    // 0-12 km
   gsap.to(".t_minus ", {opacity:0, top: '90%', color:'#fff'});
   gsap.to(".timeline_box", { display: 'none', duration: 0.5 });
-  gsap.to(".circle", { rotation: -29.5, duration: 13 });
   gsap.to("html", { background: 'rgb(22 40 59)', duration: 11});
   gsap.to(".onearth", { top: '200%', duration: 5, ease: "hop"});
   setTimeout(function () {
@@ -184,11 +191,12 @@ function liftoff() {
 
 //       MAX_Q          00:58
 function max_q() {
-  time_speed = 1; acceleration = 74.184; altitude_speed = 0.85;
+  time_speed = 1; acceleration = 74.184; altitude_speed = 0.79;
+  gsap.to(".circle", { rotation: -51.5, duration: 10 });
+  gsap.to(".not_activated", { height: '26%', duration: 10 });    // 0-12 km
   gsap.to(".max-q", { display: 'none', duration: 1 });
   gsap.to("html", { background: '#222', duration: 5});
   gsap.to(".dragon", { rotation: 85, duration: 10 });
-  gsap.to(".circle", { rotation: -51.5, duration: 10 });
   setTimeout(function () { 
        gsap.to("canvas", { opacity: 1, duration: 7 });
   gsap.to(".out_of_earth", {top: '65%', duration:7})
@@ -197,10 +205,11 @@ function max_q() {
 
 //       MECO           02:33
 function meco() {
-  time_speed = 2;
+  time_speed = 2; acceleration = 74.184; altitude_speed = 0.85;
+  gsap.to(".circle", { rotation: -97.18, duration: 16 });
+  gsap.to(".not_activated", { height: '4%', duration: 16 });    // 0-12 km
   gsap.to(".meco", { display: 'none', duration: 1 });
   gsap.to(".trail_1st", { display: 'none', duration: 0.5 });
-  gsap.to(".circle", { rotation: -97.18, duration: 16 });
   gsap.to(".out_of_earth", { scale: 0.2, duration: 2 });
   tl.to(".dragon", { scale: 0.7, duration: 2 })
     .to(".dragon ._1st", { top: 10000, duration: 5, ease: "hop" });
@@ -236,6 +245,7 @@ function landing_1st() {
 }
 function goto_separation_2nd() {
   time_speed = 2;
+  gsap.to(".seco-1", {display: 'none', duration: 1 })
   gsap.to(".circle", { rotation: -152.8, duration:8.5 });
 }
 //       2ND SEPARATION  12:00
@@ -245,14 +255,25 @@ function separation_2nd() {
     .to(".dragon ._2nd", { top: 10000, duration: 5, ease: "hop" });
 }
 function to_iss() {
+  gsap.to(".iss", { display:'block' });
   gsap.to(".iss", { right: '15%', duration: 3 });
-  gsap.to(".left, .right, .t_minus", { opacity: 0, duration: 2 })
+  gsap.to(".left, .right, .t_minus", { opacity: 0, duration: 2 });
+  gsap.to(".dock_iss", { display: 'block', duration: 1 });
   
 }
-function dock_to_iss(){
-
+function dock_to_iss() {
+  gsap.to(".dock_iss", { display: 'none'});
+  gsap.to(".dragon", { scale: 3, duration: 2 });
+  gsap.to(".iss", { scale: 5, duration: 2 });
+  gsap.to(".iss", { opacity: 0, duration: 2 });
+  gsap.to(".dragon", { left: '-10%', opacity: 0, duration: 2 });
+  gsap.to(".dragon_dock, .iss_dock", { display: 'block', opacity: 1, duration: 5 });
+  gsap.to(".docking", { display: 'block', duration:1});
 }
-
+function docking() {
+  gsap.to(".docking", { display: 'none', duration:1});
+  gsap.to(".dragon_dock", {left:'0%', duration:3})
+}
 function restart() {
   time_speed = 0;
   alert("end");

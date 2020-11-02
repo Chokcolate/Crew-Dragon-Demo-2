@@ -6,7 +6,13 @@ html {
   height: 100%;
   overflow: hidden;
 }
-
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
 canvas {
   position: absolute;
   z-index: -1;
@@ -53,36 +59,95 @@ canvas {
 
 .status_orbit {
   position: absolute;
+  z-index: 999;
   top: 0;
-  right: 0;
+  right: 0%;
   width: 20%;
   height: 100%;
 }
 
-.status_orbit div {
+.status_orbit .activated,
+.status_orbit .not_activated,
+.status_orbit .orbit_range {
   position: absolute;
   top: 5%;
   width: 100%;
   height: 90%;
-  overflow: hidden;
 }
 
-.activated .line,
-.not_activated .line {
+.line {
   position: absolute;
   right: 15%;
   top: 0;
-  width: 10px;
-  z-index: 1;
+  width: 5px;
   height: 100%;
 }
+.orbit_info {
+  width: 100%;
+  right: 7%;
+}
 
-.icon_cdd2 {
+.orbit_state {
   position: absolute;
-  z-index: 1;
   width: 50px;
-  right: 10%;
-  bottom: 0;
+  background-color: #333;
+  padding: 5px;
+  border: 4px solid #fff;
+  border-radius: 30px;
+  left: -22.5px;
+}
+
+.drop_info {
+  background: #fff;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  font-size: 25px;
+  display: inline-block;
+  height: 50px;
+  line-height: 44px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 24px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: "";
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  border-bottom: 25px solid transparent;
+  border-left: 20px solid #eee;
+  border-top: 25px solid transparent;
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.tag:hover::after {
+  border-left-color: crimson;
 }
 
 .t_minus {
@@ -208,11 +273,11 @@ canvas {
   width: 100%;
   height: auto;
 }
-.iss{
+.iss {
   position: fixed;
-    width: 25%;
-    top: -35%;
-    right: -50%;
+  width: 25%;
+  top: -35%;
+  right: -50%;
 }
 
 .trail_1st {
