@@ -48,11 +48,7 @@ canvas {
   margin: 50px;
   z-index: 6;
 }
-.card_summary {
-  max-width: 50em;
-  margin: 50px;
-  z-index: 6;
-}
+
 .separation_1st,
 .separation_2nd {
   background-color: rgb(22, 22, 22);
