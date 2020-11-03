@@ -109,6 +109,27 @@ CustomEase.create("hop2", "M0,0 C0.272,0.146 0.513,0.335 0.658,0.462 0.818,0.602
 gsap.to(".earth", { rotation: -1000, duration: 250 });
 gsap.to(".start-engine", { display: 'block', opacity:1, duration: 1 });
 
+function show_ob1() { 
+  gsap.to(".troposphere, .btnclose", {display:'block', duration:1});
+  gsap.to(".stratosphere, .mesosphere, .thermosphere", {display:'none'});
+}
+function show_ob2() { 
+  gsap.to(".stratosphere, .btnclose", {display:'block', duration:1});
+  gsap.to(".troposphere, .mesosphere, .thermosphere", {display:'none'});
+}
+function show_ob3() { 
+  gsap.to(".mesosphere, .btnclose", {display:'block', duration:1});
+  gsap.to(".troposphere, .stratosphere, .thermosphere", {display:'none'});
+}
+function show_ob4() { 
+  gsap.to(".thermosphere, .btnclose", {display:'block', duration:1});
+  gsap.to(".troposphere, .stratosphere, .mesosphere", {display:'none'});
+}
+
+
+
+
+
 //       COUNT_DOWN     00:00
 function count_down() {
   var k = setInterval(function interv() {
@@ -273,7 +294,8 @@ function dock_to_iss() {
 }
 function docking() {
   gsap.to(".docking", { display: 'none', duration:1});
-  gsap.to(".dragon_dock", {left:'0%', duration:3})
+  gsap.to(".dragon_dock", {left:'0%', duration:3});
+  gsap.to(".final", {display: 'block', duration:1});
 }
 function restart() {
   time_speed = 0;
