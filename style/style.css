@@ -83,8 +83,9 @@ canvas {
   height: 100%;
 }
 .orbit_info {
-  width: 100%;
-  right: 7%;
+  max-width: 20em;
+  right: 5%;
+  top:55%;
 }
 
 .orbit_state {
@@ -198,8 +199,7 @@ canvas {
 }
 
 .timeline_box {
-  cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1581299/profile/profile-80.jpg),
-    auto;
+
   width: 40%;
   position: fixed;
   top: 100px;

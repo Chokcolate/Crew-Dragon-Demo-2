@@ -151,8 +151,8 @@ function count_down() {
         gsap.to(".tl_9", { color: "rgb(81 223 105)", duration: 1, text: "T-minus: 00:45 – Launch director ให้สัญญาณ Go/No Go" });
         minn = 0;
         secc = 0;
-        //document.getElementById("time_status").innerHTML = "";
-        gsap.to(".t_minus", { opacity:0 })
+        gsap.to(".t_minus", { opacity:0 });
+        gsap.to(".liftoff", { display:'block', duration:1 });
         clearInterval(k);
       }
     }
