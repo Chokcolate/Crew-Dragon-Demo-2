@@ -73,22 +73,23 @@ var i = setInterval(function interv() {
     }
       
     else if (altitude_cumulative >= 12 && altitude_cumulative <= 13) {
-     gsap.to(".ob_1", { background: '#2fa8e4' })
+      gsap.to(".ob_1", { border:'4px solid #fff' });
      gsap.to(".troposphere", { display: 'block', duration: 1 });
     }
     else if (altitude_cumulative >= 36 && altitude_cumulative <= 37) {
       gsap.to(".troposphere", { display: 'none'});
-     gsap.to(".ob_2", { background: '#2fa8e4' })
+      gsap.to(".ob_2", { border:'4px solid #fff' });
+     
      gsap.to(".stratosphere", { display: 'block', duration: 1 });
     }
     else if (altitude_cumulative >= 80 && altitude_cumulative <= 81) {
      gsap.to(".stratosphere", { display: 'none'});
-     gsap.to(".ob_3", { background: '#2fa8e4' })
+     gsap.to(".ob_3", { border:'4px solid #fff' });
      gsap.to(".mesosphere", { display: 'block', duration: 1 });
     }
     else if (altitude_cumulative >= 199 && altitude_cumulative <= 200) {
      gsap.to(".mesosphere", { display: 'none'});
-     gsap.to(".ob_4", { background: '#2fa8e4' })
+     gsap.to(".ob_4", { border:'4px solid #fff' });
       gsap.to(".thermosphere", { display: 'block', duration: 1 });
       setTimeout(function () { gsap.to(".thermosphere", { display: 'none'}); }, 5000);
     }
@@ -97,7 +98,7 @@ var i = setInterval(function interv() {
   cumulative_speed += acceleration;
   altitude_cumulative += altitude_speed;
   //speed.innerHTML = parseInt(cumulative_speed);
-  altitude.innerHTML = altitude_cumulative.toFixed(1) + " KM";
+  altitude.innerHTML = "Altitude "+altitude_cumulative.toFixed(1) + " KM";
   time.innerHTML = minn+" : "+parseInt(secc);
 }, 100);
 
